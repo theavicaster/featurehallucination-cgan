@@ -2,6 +2,8 @@
 
 Uses a conditional GAN with discriminator of 2C classes for real and fake to hallucinate missing features for hyperspectral or multimodal data using available features.
 
+Generator takes latent dimensions as well as input from available modality to generate features.
+GAN was trained using tips from https://github.com/soumith/ganhacks
 Hallucinated features are concatenated with original and sent through to classifier.
 
 Results - 

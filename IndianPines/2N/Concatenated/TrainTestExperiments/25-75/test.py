@@ -82,6 +82,8 @@ print(data.dtype)
 
 data, Y = createPatches(data, indian_pines_gt, windowSize=15)
 
+Ytsne = Y
+
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 
@@ -162,6 +164,40 @@ from sklearn.model_selection import train_test_split
 #results = onestream.evaluate([Xtest_indian_pines, Xtest_indian_pines],Ytest_indian_pines, batch_size=32)
 
 #print('test loss, test acc:', results)
+
+from sklearn.manifold import TSNE
+tsne = TSNE(n_components=2, random_state=666, verbose=2, perplexity = 40)
+
+tsneorig = tsne.fit_transform(data1)
+tsnehall = tsne.fit_transform(generated_images)
+
+print(tsneorig.shape, tsnehall.shape)
+
+#np.save('/home/SharedData/Avinandan/DarrellHallucination/tsneoneorig.npy', tsneorig)
+#np.save('/home/SharedData/Avinandan/DarrellHallucination/tsneonehall.npy', tsnehall)
+
+import matplotlib.pyplot as plt
+
+#print(Ytsne.shape)
+tsne_x=tsnehall[:,0]
+tsne_y=tsnehall[:,1]
+plt.scatter(tsne_x, tsne_y, c=Ytsne, cmap=plt.cm.get_cmap("jet", 10))
+plt.colorbar(ticks=range(10))
+plt.clim(-0.5, 9.5)
+plt.title('t-SNE of hallucinated features')
+plt.savefig('/home/SharedData/Avinandan/TeacherStudentExperiments/tsnehall.png')
+
+plt.clf()
+
+tsne_x=tsneorig[:,0]
+tsne_y=tsneorig[:,1]
+plt.scatter(tsne_x, tsne_y, c=Ytsne, cmap=plt.cm.get_cmap("jet", 10))
+plt.colorbar(ticks=range(10))
+plt.clim(-0.5, 9.5)
+plt.title('t-SNE of original features')
+plt.savefig('/home/SharedData/Avinandan/TeacherStudentExperiments/tsneorig.png')
+
+
 
 sgd = SGD(lr=0.0001, momentum=0.9, decay=1e-6)
 finalclassifier.compile(optimizer=sgd, loss='categorical_crossentropy', metrics=['accuracy'])

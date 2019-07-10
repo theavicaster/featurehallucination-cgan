@@ -84,6 +84,8 @@ print(data.dtype)
 
 data, Y = createPatches(data, gt, windowSize=3, removeZeroLabels=False)
 
+Ytsne = Y
+
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 
@@ -174,6 +176,44 @@ from sklearn.model_selection import train_test_split
 #print('test loss, test acc:', results)
 (Xtrain_Houston_Fusion, Xtest_Houston_Fusion,Ytrain_Houston_Fusion,Ytest_Houston_Fusion,) = train_test_split(data,Y, random_state = 666, test_size = 0.75)
 (Xtrain_Houston_Fusion1, Xtest_Houston_Fusion1,Ytrain_Houston_Fusion,Ytest_Houston_Fusion,) = train_test_split(X_Houston_Fusion1,Y, random_state = 666, test_size=0.75)
+
+'''
+from sklearn.manifold import TSNE
+tsne = TSNE(n_components=2, random_state=666, verbose=2, perplexity = 40)
+
+tsneorig = tsne.fit_transform(data1)
+tsnehall = tsne.fit_transform(generated_images)
+
+print(tsneorig.shape, tsnehall.shape)
+
+#np.save('/home/SharedData/Avinandan/DarrellHallucination/tsneoneorig.npy', tsneorig)
+#np.save('/home/SharedData/Avinandan/DarrellHallucination/tsneonehall.npy', tsnehall)
+
+import matplotlib.pyplot as plt
+
+#print(Ytsne.shape)
+tsne_x=tsnehall[:,0]
+tsne_y=tsnehall[:,1]
+plt.scatter(tsne_x, tsne_y, c=Ytsne, cmap=plt.cm.get_cmap("jet", 10))
+plt.colorbar(ticks=range(10))
+plt.clim(-0.5, 9.5)
+plt.title('t-SNE of hallucinated features')
+plt.savefig('/home/SharedData/Avinandan/TeacherStudentExperiments/tsnehall.png')
+
+plt.clf()
+
+tsne_x=tsneorig[:,0]
+tsne_y=tsneorig[:,1]
+plt.scatter(tsne_x, tsne_y, c=Ytsne, cmap=plt.cm.get_cmap("jet", 10))
+plt.colorbar(ticks=range(10))
+plt.clim(-0.5, 9.5)
+plt.title('t-SNE of original features')
+plt.savefig('/home/SharedData/Avinandan/TeacherStudentExperiments/tsneorig.png')
+
+'''
+
+
+
 
 sgd = SGD(lr=0.0001, momentum=0.9, decay=1e-6)
 finalclassifier.compile(optimizer=sgd, loss='categorical_crossentropy', metrics=['accuracy'])

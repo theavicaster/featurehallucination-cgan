@@ -15,6 +15,20 @@ Ablation studies done with Indian Pines dataset.
 
 ![](poster_iccv.jpg)
 
+## Usage
+
+Run the files in following order, modifying the directory of dataset -
+
+```sh
+python twostreamdistillation.py
+python train.py
+```
+The testmodels.py is used to evaluate the optimal model for generator.
+
+```sh
+python testmodels.py
+python test.py
+```
 
 
 

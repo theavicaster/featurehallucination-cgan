@@ -1,6 +1,6 @@
 # Feature Hallucination Using Conditional GAN
 
->Implementation of the paper - An Adversarial Approach to Discriminative Modality Hallucination for Remote Sensing Data - ICCVw CROMOL 2019 in Keras.
+>Implementation of the paper - **An Adversarial Approach to Discriminative Modality Hallucination for Remote Sensing Data** - ICCVw CROMOL 2019 in Keras.
 
 >http://openaccess.thecvf.com/content_ICCVW_2019/papers/CROMOL/Pande_An_Adversarial_Approach_to_Discriminative_Modality_Distillation_for_Remote_Sensing_ICCVW_2019_paper.pdf
 

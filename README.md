@@ -26,7 +26,7 @@ Ablation studies done with Indian Pines dataset.
 * Houston Fusion
     * http://hyperspectral.ee.uh.edu/?page_id=1075
 * Multimodal Dataset
-    * Uses Multispectral and complementary data.
+    * Uses Multispectral and complementary Panchromatic data.
     * Dataset is not publicly available.
 
 ## Usage

@@ -15,7 +15,7 @@ Ablation studies done with Indian Pines dataset.
 
 ## Poster
 
-![](poster_iccv.jpg)
+![Poster Presented](https://github.com/theavicaster/featurehallucination-cgan/blob/master/poster_iccv.png)
 
 ## Datasets
 

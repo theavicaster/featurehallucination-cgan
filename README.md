@@ -13,7 +13,21 @@ Hallucinated features are concatenated with original and sent through to classif
 
 Ablation studies done with Indian Pines dataset.
 
+## Poster
+
 ![](poster_iccv.jpg)
+
+## Datasets
+
+* Indian Pines Corrected
+    * http://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes
+* Pavia University Scene
+    * http://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes
+* Houston Fusion
+    * http://hyperspectral.ee.uh.edu/?page_id=1075
+* Multimodal Dataset
+    * Uses Multispectral and complementary data.
+    * Dataset is not publicly available.
 
 ## Usage
 
@@ -23,7 +37,7 @@ Run the files in following order, modifying the directory of dataset -
 python twostreamdistillation.py
 python train.py
 ```
-The testmodels.py is used to evaluate the optimal model for generator.
+The file testmodels.py is used to evaluate the optimal model for generator.
 
 ```sh
 python testmodels.py

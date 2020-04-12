@@ -43,7 +43,20 @@ The file testmodels.py is used to evaluate the optimal model for generator.
 python testmodels.py
 python test.py
 ```
+## Citation
 
+If this paper and/or this code is useful for your research, please consider citing us -
+
+```
+@inproceedings{pande2019adversarial,
+  title={An Adversarial Approach to Discriminative Modality Distillation for Remote Sensing Image Classification},
+  author={Pande, Shivam and Banerjee, Avinandan and Kumar, Saurabh and Banerjee, Biplab and Chaudhuri, Subhasis},
+  booktitle={Proceedings of the IEEE International Conference on Computer Vision Workshops},
+  pages={0--0},
+  year={2019}
+}
+
+```
 
 
 

@@ -1,19 +1,19 @@
 # Feature Hallucination Using Conditional GAN
 
->Implementation of the paper - **An Adversarial Approach to Discriminative Modality Hallucination for Remote Sensing Data** - ICCVw CROMOL 2019 in Keras.
+### Implementation of the paper - [**An Adversarial Approach to Discriminative Modality Hallucination for Remote Sensing Data**](http://openaccess.thecvf.com/content_ICCVW_2019/papers/CROMOL/Pande_An_Adversarial_Approach_to_Discriminative_Modality_Distillation_for_Remote_Sensing_ICCVW_2019_paper.pdf) - IEEE ICCV - CROMOL 2019 in Keras.
 
->http://openaccess.thecvf.com/content_ICCVW_2019/papers/CROMOL/Pande_An_Adversarial_Approach_to_Discriminative_Modality_Distillation_for_Remote_Sensing_ICCVW_2019_paper.pdf
 
-Uses a conditional GAN with discriminator of 2C classes for real and fake to hallucinate missing features for hyperspectral or multimodal data using available features.
+Uses a conditional GAN with novel discriminator of _2C_ classes (corresponsing to _C_ real and fake classes each) to hallucinate missing features for hyperspectral or multimodal remote sensing data using available sensor derived features.
 
-Generator takes latent dimensions as well as input from available modality to generate features.
-GAN was trained using tips from https://github.com/soumith/ganhacks
+Generator takes latent dimensions as well as conditional input from available modality to generate missing features.
+GAN was trained using tips from Soumith Chintala's [GANHacks](https://github.com/soumith/ganhacks).
 
-Hallucinated features are concatenated with original and sent through to classifier.
+Deep CNNs have been utilized as feature extractors for application of GAN, and further classification.
+Hallucinated features are concatenated with original features and sent to DNN classifier.
 
 Ablation studies done with Indian Pines dataset.
 
-## Poster
+## Poster and Architecture
 
 ![Poster Presented](https://github.com/theavicaster/featurehallucination-cgan/blob/master/poster_iccv.png)
 

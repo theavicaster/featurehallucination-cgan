@@ -1,6 +1,6 @@
 # Feature Hallucination Using Conditional GAN
 
-### Implementation of the paper - [**An Adversarial Approach to Discriminative Modality Hallucination for Remote Sensing Data**](http://openaccess.thecvf.com/content_ICCVW_2019/papers/CROMOL/Pande_An_Adversarial_Approach_to_Discriminative_Modality_Distillation_for_Remote_Sensing_ICCVW_2019_paper.pdf) - IEEE ICCV - CROMOL 2019 in TensorFLow
+### Implementation of the paper - [**An Adversarial Approach to Discriminative Modality Hallucination for Remote Sensing Data**](http://openaccess.thecvf.com/content_ICCVW_2019/papers/CROMOL/Pande_An_Adversarial_Approach_to_Discriminative_Modality_Distillation_for_Remote_Sensing_ICCVW_2019_paper.pdf) - IEEE ICCV - CROMOL 2019 in TensorFlow
 
 
 Uses a conditional GAN with novel discriminator of _2C_ classes (corresponsing to _C_ real and fake classes each) to hallucinate missing features for hyperspectral or multimodal remote sensing data using available sensor derived features.
